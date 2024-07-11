@@ -1,0 +1,289 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter";
+  background: #1818180d;
+}
+
+.header_container {
+  width: 100%;
+  margin: 0px auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 9px 100px 29px 100px; */
+  box-shadow: 0px -1px 0px 0px #c4cdd5 inset;
+}
+
+.nav1 {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #454f5b;
+}
+
+.nav1 h5 {
+  height: 26px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: 0.12em;
+  text-align: left;
+  margin-right: 197px;
+}
+
+.nav1 a {
+  color: #ffffff;
+  margin-right: -200px;
+}
+
+.header .nav2_container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header .nav2 {
+  height: 82px;
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav2 ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin-left: -150px;
+  text-decoration: none;
+}
+
+.nav2 ul a {
+  text-decoration: none;
+}
+.nav2 ul li select {
+  border: none;
+  cursor: pointer;
+}
+
+.nav2 ul li {
+  color: #161c24;
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 23.87px;
+  text-align: left;
+}
+
+.nav2 span {
+  display: flex;
+  width: 303px;
+  height: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav2 span a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav2 span .p img {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.nav2 span img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.nav2 span img:hover {
+  background-color: rgb(228, 229, 230);
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart {
+  width: 836px;
+  height: 394px;
+  background-color: #fff;
+  margin: 50px;
+  padding: 16px 40px;
+}
+
+.nav_cart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.hr_cart {
+  width: 760px;
+  border: 1px solid #eaeaea;
+  margin-bottom: 24px;
+}
+
+.cart_info {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.cart_info img {
+  width: 136px;
+  height: 120px;
+  margin-right: 12px;
+}
+
+.cart_info .c {
+  display: flex;
+  flex-direction: column;
+  margin-right: 158px;
+}
+.cart_info .c h4 {
+  color: #161c24;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+.cart_info .c h5 {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #161c24;
+  margin-bottom: 34px;
+}
+.cart_info .c h5 a {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #4295e4;
+}
+
+.cart_info #count {
+  width: 60px;
+  height: 32px;
+  border: 1px solid #eaeaea;
+  outline: none;
+  color: #161c24;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+
+.cart_info h {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  height: 30px;
+}
+
+.cart_info h p {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: #4295e4;
+}
+
+#price {
+  width: 143px;
+  display: flex;
+  gap: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+#price h4 {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: left;
+  color: #161c24;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons button {
+  width: Hug (216px) px;
+  height: Hug (46px) px;
+  padding: 10px 24px 10px 24px;
+  border: 1px solid #add7ff;
+  background-color: transparent;
+  color: #161c24;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  text-align: left;
+}
+
+.buttons .button {
+  width: Hug (249px) px;
+  height: Hug (44px) px;
+  padding: 9px 64px 9px 64px;
+  background-color: #4295e4;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.buttons .button:hover {
+  background-color: #0d5ba4;
+}
