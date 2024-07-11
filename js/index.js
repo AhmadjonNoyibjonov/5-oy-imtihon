@@ -8,9 +8,6 @@ async function getUrl(url) {
   }
 }
 
-const wrapper = document.querySelector(".block_cards");
-const loader = document.querySelector(".loader");
-
 function CreateCard(product) {
   return `
   <div class="card" data-id="${product.id}">
@@ -52,17 +49,170 @@ function CreateCard(product) {
   `;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  getUrl("https://cars-pagination.onrender.com/products")
-    .then((data) => {
-      data.length &&
-        data.forEach(function (element) {
-          if (element.id > 80 && element.id < 93) {
-            let card = CreateCard(element);
+document.addEventListener("DOMContentLoaded", async function () {
+  const wrapper = document.querySelector(".block_cards");
+  const loader = document.querySelector(".loader");
+  const select = document.querySelector("#kategory");
+  const buttons = document.querySelectorAll(".button");
+
+  try {
+    const data = await getUrl("https://cars-pagination.onrender.com/products");
+    data.forEach((element) => {
+      if (element.id > 80 && element.id < 93) {
+        const card = CreateCard(element);
+        wrapper.innerHTML += card;
+        loader.style.display = "none";
+      }
+
+      select.addEventListener("change", function () {
+        wrapper.innerHTML = "";
+
+        data.forEach((value) => {
+          if (this.value === value.category) {
+            const card = CreateCard(value);
             wrapper.innerHTML += card;
-            loader.style.display = "none";
+
+            const cards = document.querySelectorAll(".card");
+            cards.length &&
+              cards.forEach((value) => {
+                value.addEventListener("click", function () {
+                  const cardId = this.getAttribute("data-id");
+                  if (cardId) {
+                    window.location.assign(
+                      `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+                    );
+                  }
+                });
+              });
           }
         });
+      });
+
+
+      buttons[0].addEventListener('click',function() {
+        wrapper.innerHTML = ''
+
+        data.forEach(value => {
+          if(value.newPrice > 4000 && value.newPrice < 15000) {
+            const card = CreateCard(value);
+            wrapper.innerHTML += card;
+
+            const cards = document.querySelectorAll(".card");
+            cards.length &&
+              cards.forEach((value) => {
+                value.addEventListener("click", function () {
+                  const cardId = this.getAttribute("data-id");
+                  if (cardId) {
+                    window.location.assign(
+                      `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+                    );
+                  }
+                });
+              });
+
+          }
+        })
+      })
+
+      buttons[1].addEventListener('click',function() {
+        wrapper.innerHTML = ''
+
+        data.forEach(value => {
+          if(value.newPrice > 15000 && value.newPrice < 30000) {
+            const card = CreateCard(value);
+            wrapper.innerHTML += card;
+
+            const cards = document.querySelectorAll(".card");
+            cards.length &&
+              cards.forEach((value) => {
+                value.addEventListener("click", function () {
+                  const cardId = this.getAttribute("data-id");
+                  if (cardId) {
+                    window.location.assign(
+                      `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+                    );
+                  }
+                });
+              });
+
+          }
+        })
+      })
+
+      buttons[2].addEventListener('click',function() {
+        wrapper.innerHTML = ''
+
+        data.forEach(value => {
+          if(value.newPrice > 30000 && value.newPrice < 45000) {
+            const card = CreateCard(value);
+            wrapper.innerHTML += card;
+
+            const cards = document.querySelectorAll(".card");
+            cards.length &&
+              cards.forEach((value) => {
+                value.addEventListener("click", function () {
+                  const cardId = this.getAttribute("data-id");
+                  if (cardId) {
+                    window.location.assign(
+                      `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+                    );
+                  }
+                });
+              });
+
+          }
+        })
+      })
+
+      buttons[3].addEventListener('click',function() {
+        wrapper.innerHTML = ''
+
+        data.forEach(value => {
+          if(value.newPrice > 45000 && value.newPrice < 60000) {
+            const card = CreateCard(value);
+            wrapper.innerHTML += card;
+
+            const cards = document.querySelectorAll(".card");
+            cards.length &&
+              cards.forEach((value) => {
+                value.addEventListener("click", function () {
+                  const cardId = this.getAttribute("data-id");
+                  if (cardId) {
+                    window.location.assign(
+                      `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+                    );
+                  }
+                });
+              });
+
+          }
+        })
+      })
+
+      buttons[4].addEventListener('click',function() {
+        wrapper.innerHTML = ''
+
+        data.forEach(value => {
+          if(value.newPrice > 60000 && value.newPrice < 79000) {
+            const card = CreateCard(value);
+            wrapper.innerHTML += card;
+
+            const cards = document.querySelectorAll(".card");
+            cards.length &&
+              cards.forEach((value) => {
+                value.addEventListener("click", function () {
+                  const cardId = this.getAttribute("data-id");
+                  if (cardId) {
+                    window.location.assign(
+                      `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+                    );
+                  }
+                });
+              });
+
+          }
+        })
+      })
 
       const cards = document.querySelectorAll(".card");
       cards.length &&
@@ -76,8 +226,47 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           });
         });
-    })
-    .catch((error) => {
-      return error;
     });
+  } catch (error) {
+    return error;
+  }
 });
+
+//   getUrl("https://cars-pagination.onrender.com/products")
+//     .then((data) => {
+//       data.length &&
+//         data.forEach(function (element) {
+//           if (element.id > 80 && element.id < 93) {
+//             let card = CreateCard(element);
+//             wrapper.innerHTML += card;
+//             loader.style.display = "none";
+//           }
+//         });
+
+//       select.addEventListener("change", function () {
+//         wrapper.innerHTML = "";
+//         data.forEach((value) => {
+//           if (this.value == value.category) {
+//             const card = CreateCard(element);
+//             wrapper.innerHTML += card;
+//           }
+//         });
+//       });
+
+// const cards = document.querySelectorAll(".card");
+// cards.length &&
+//   cards.forEach((value) => {
+//     value.addEventListener("click", function () {
+//       const cardId = this.getAttribute("data-id");
+//       if (cardId) {
+//         window.location.assign(
+//           `http://127.0.0.1:5500/pages/pages.html?id=${cardId}`
+//         );
+//       }
+//     });
+//   });
+//     })
+//     .catch((error) => {
+//       return error;
+//     });
+// });
